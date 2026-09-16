@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoGlow Skincare | Contact Us</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+ 
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #400321, #044f53, #663ad7, #cd09eb);
+            background-size: 400% 400%;
+            animation: neonShift 10s ease infinite;
+        }
+
+        @keyframes neonShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+
+        /* Header */
+        header {
+            background: rgba(35, 10, 65, 0.80);
+            padding: 20px;
+            text-align: center;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        header h1 {
+            margin: 0 0 18px;
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.45);
+        }
+
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.12);
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #ef8be7;
+            color: #34105e;
+            transform: translateY(-2px);
+        }
+
+        /* Main content */
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        /* Page heading */
+        .hero {
+            text-align: center;
+            padding: 60px 25px;
+            margin-bottom: 35px;
+
+            background: rgba(255, 255, 255, 0.11);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 28px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 35px rgba(20, 0, 50, 0.35);
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ffe5fc;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+
+        /* Contact section */
+        .contact-section {
+            background: rgba(255, 255, 255, 0.10);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 30px rgba(20, 0, 50, 0.3);
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            color: #ffd4f8;
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .contact-card h3 {
+            color: #ffc9f8;
+            font-size: 1.3rem;
+        }
+
+        .contact-card p {
+            line-height: 1.7;
+        }
+
+        /* Contact links */
+        .contact-card a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            color: #ff9fe9;
+        }
+
+        /* Find Us and Social Media */
+        .extra-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .extra-card {
+            background: rgba(255, 255, 255, 0.10);
+            padding: 35px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(20, 0, 50, 0.3);
+        }
+
+        .extra-card h3 {
+            color: #ffd4f8;
+            font-size: 1.7rem;
+        }
+
+        .extra-card p {
+            line-height: 1.7;
+        }
+
+        /* Social media buttons */
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 18px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #ef8be7;
+            color: #34105e;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: rgba(35, 10, 65, 0.82);
+            margin-top: 20px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .contact-details,
+            .extra-sections {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header and Navigation -->
+    <header>
+        <h1>EcoGlow Skincare</h1>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Product Details</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Contact Introduction -->
+        <section class="hero">
+            <h2>Contact Us</h2>
+
+            <p>
+                We would love to hear from you. Get in touch with
+                EcoGlow Skincare for questions, enquiries and feedback.
+            </p>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="contact-section">
+
+            <h2>Get in Touch</h2>
+
+            <div class="contact-details">
+
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <p>
+                        <a href="mailto:koena@ecoglow.co.za">
+                            koena@ecoglow.co.za
+                            taylornnana13@gmail.com
+                        </a>
+                    </p>
+                    <p>
+                        <a href="mailto:taylorlashh13@gmail.com">
+                            taylorlashh13@gmail.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Phone</h3>
+                    <p>
+                        <a href="tel:+27711740937">
+                            +27 71 174 0937
+                            +27821234567
+                        </a>
+                    </p>
+                    <p>
+                        <a href="tel:+27821234567">
+                            +27574639385
+                        </a>
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Location</h3>
+                    <p>
+                        Pretoria Central,<br>
+                        South Africa
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Extra Information -->
+        <div class="extra-sections">
+
+            <section class="extra-card">
+                <h3>Find Us</h3>
+
+                <p>
+                    Visit our Cape Town location or use the map below
+                    to find us.
+                    We are located in the heart of Cape Town, surrounded by
+                    the beauty of nature and the vibrant city life. And we deliver our products nationwide, so you can enjoy the benefits of EcoGlow Skincare wherever you are.
+                </p>
+
+                <p>
+                    📍headquarters Cape Town, South Africa
+                </p>
+            </section>
+
+            <section class="extra-card">
+                <h3>Social Media</h3>
+
+                <p>
+                    Follow EcoGlow Skincare and keep up with our
+                    latest products and news.
+                </p>
+
+                <div class="social-links">
+                    <a href="#">Instagram: 
+                        EcoGlow Skincare</a>
+                    </a>
+                    <a href="#">Facebook: 
+                        Beauty more over
+                    </a>
+                    <a href="#">TikTok:
+                        Skincare tips and trends
+                    </a>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 EcoGlow Skincare. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

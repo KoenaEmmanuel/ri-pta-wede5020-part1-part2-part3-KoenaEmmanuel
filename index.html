@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoGlow Skincare | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #ff00e1, #8400ff, #0044ff, #d000ff);
+            background-size: 400% 400%;
+            animation: neonShift 10s ease infinite;
+        }
+
+        @keyframes neonShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* HEADER */
+        header {
+            background: rgba(35, 10, 65, 0.85);
+            padding: 20px;
+            text-align: center;
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+        }
+
+        header h1 {
+            margin: 0 0 15px;
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        /* NAVIGATION */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 10px 18px;
+            border-radius: 25px;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #ee8ee9;
+            color: #35105f;
+            transform: translateY(-2px);
+        }
+
+        /* MAIN */
+        main {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 50px 25px;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 35px rgba(20, 0, 50, 0.35);
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ffe9ff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 900px;
+            height: 330px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 30px;
+            border-radius: 22px;
+            box-shadow: 0 12px 35px rgba(20, 0, 50, 0.4);
+        }
+
+        /* BUTTON */
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            background: linear-gradient(45deg, #ff8edb, #c879ff);
+            color: #32104f;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 120, 230, 0.4);
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 150, 240, 0.6);
+        }
+
+        /* SECTIONS */
+        .featured,
+        .gallery,
+        .why-choose {
+            background: rgba(255, 255, 255, 0.10);
+            padding: 35px;
+            margin-bottom: 35px;
+            border-radius: 25px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 30px rgba(20, 0, 50, 0.3);
+        }
+
+        .featured h2,
+        .gallery h2,
+        .why-choose h2 {
+            color: #ffd6fa;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .featured > p,
+        .gallery > p {
+            text-align: center;
+        }
+
+        /* PRODUCT CARDS */
+        .product-preview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .product-preview article {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: 0.3s ease;
+        }
+
+        .product-preview article:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .product-preview img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 18px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .product-preview h3 {
+            color: #f7c7ff;
+        }
+
+        .product-preview a {
+            display: inline-block;
+            margin-top: 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .product-preview a:hover {
+            color: #ff9ee7;
+        }
+
+        /* GALLERY */
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .product-gallery img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 25px rgba(20, 0, 50, 0.3);
+            transition: 0.3s ease;
+        }
+
+        .product-gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        /* WHY CHOOSE */
+        .why-choose ul {
+            max-width: 600px;
+            margin: 25px auto 0;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: rgba(35, 10, 65, 0.8);
+            margin-top: 30px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .product-preview,
+            .product-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero-image {
+                height: 230px;
+            }
+
+            .product-gallery img {
+                height: 220px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>EcoGlow Skincare</h1>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Product Details</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <video src="products/ad.mp4" alt="EcoGlow Skincare banner" class="hero-video" autoplay muted loop>
+
+
+            <h2>Nourish Your Skin, Naturally</h2>
+            <p>
+                Discover organic, cruelty-free and locally sourced
+                skincare inspired by African botanicals.
+            </p>
+            <a href="shop.html" class="button">Shop Now</a>
+        </section>
+
+        <!-- FEATURED PRODUCTS -->
+        <section class="featured">
+            <h2>Featured Products</h2>
+            <p>
+                Explore our carefully selected skincare products
+                made with natural ingredients.
+            </p>
+
+            <div class="product-preview">
+              <!-- Product 1 -->
+<article>
+    <img src="images/imageshero.jpg.jpg" alt="Organic Face Cream">
+    <h3>Organic Face Cream</h3>
+    <p>A gentle moisturiser made with natural African botanical ingredients.</p>
+    <a href="product.html">View Product</a>
+</article>
+
+<!-- Product 2 -->
+<article>
+    <img src="images/imagessoap.jpg.jpg" alt="Natural Body Scrub">
+    <h3>Natural Body Scrub</h3>
+    <p>Refresh and nourish your skin with our natural body scrub.</p>
+    <a href="product.html">View Product</a>
+</article>
+
+<!-- Product 3 -->
+<article>
+    <img src="images/images/face-cream.jpg.jpg" alt="African Botanical Soap">
+    <h3>African Botanical Soap</h3>
+    <p>A gentle handmade soap inspired by traditional African ingredients.</p>
+    <a href="product.html">View Product</a>
+</article>
+            </div>
+        </section>
+
+        <!-- PRODUCT GALLERY -->
+        <section class="gallery">
+            <h2>Explore Our Skincare Collection</h2>
+            <p>
+                Beautiful skincare products inspired by natural
+                ingredients and botanical care.
+            </p>
+
+            <div class="product-results">
+                <img src="images/product.result.jpg" alt="EcoGlow skincare collection">
+                <img src="images/OIP result.webp" alt="EcoGlow face cream">
+                <img src="images/imageproduct.result.jpg" alt="EcoGlow botanical soap">
+            
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE ECOGLOW -->
+        <section class="why-choose">
+            <h2>Why Choose EcoGlow?</h2>
+            <ul>
+                <li>Vegan and cruelty-free products</li>
+                <li>Locally inspired African ingredients</li>
+                <li>Sustainable packaging</li>
+                <li>Natural skincare solutions</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 EcoGlow Skincare. All rights reserved.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

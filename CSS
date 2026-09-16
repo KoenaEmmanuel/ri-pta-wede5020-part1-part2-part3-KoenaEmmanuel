@@ -1,0 +1,417 @@
+/* ==========================================================================
+   2.2. BASE STYLES & CSS RESET
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%; /* 16px base */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
+    line-height: 1.6;
+    background: linear-gradient(-45deg, #ff00e1, #8400ff, #0044ff, #d000ff);
+    background-size: 400% 400%;
+    animation: neonShift 10s ease infinite;
+}
+
+@keyframes neonShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ==========================================================================
+   2.3. TYPOGRAPHY STYLES (RELATIVE UNITS)
+   ========================================================================== */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-shadow: 0 0 0.9375rem rgba(255, 255, 255, 0.5);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   2.4. HEADER & NAVIGATION LAYOUT
+   ========================================================================== */
+header {
+    background: rgba(35, 10, 65, 0.85);
+    padding: 1.25rem;
+    text-align: center;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.9375rem;
+    margin-top: 1rem;
+}
+
+/* Pseudo-classes & Buttons */
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 0.625rem 1.125rem;
+    border-radius: 1.5625rem;
+    transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background: #ee8ee9;
+    color: #35105f;
+    transform: translateY(-2px);
+    outline: none;
+}
+
+nav a:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   MAIN LAYOUT & VISUAL STYLES
+   ========================================================================== */
+main {
+    padding: 3.125rem 1.25rem;
+    max-width: 75rem; /* 1200px */
+    margin: auto;
+}
+
+.hero,
+.featured,
+.gallery,
+.why-choose {
+    background: rgba(255, 255, 255, 0.10);
+    padding: 2.1875rem;
+    margin-bottom: 2.1875rem;
+    border-radius: 1.5625rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0.625rem 2.1875rem rgba(20, 0, 50, 0.35);
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero h2 {
+    color: #ffe9ff;
+    font-size: 2.75rem;
+}
+
+.hero p {
+    max-width: 43.75rem;
+    margin: 0 auto 1.875rem;
+}
+
+.hero-video {
+    width: 100%;
+    max-width: 56.25rem;
+    height: 20.625rem;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1.875rem;
+    border-radius: 1.375rem;
+    box-shadow: 0 0.75rem 2.1875rem rgba(20, 0, 50, 0.4);
+}
+
+/* Call to Action Button */
+.button {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(45deg, #ff8edb, #c879ff);
+    color: #32104f;
+    padding: 0.875rem 1.875rem;
+    border-radius: 1.875rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.3125rem 1.25rem rgba(255, 120, 230, 0.4);
+}
+
+.button:hover,
+.button:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0.5rem 1.5625rem rgba(255, 150, 240, 0.6);
+    outline: none;
+}
+
+/* ==========================================================================
+   2.4. PRODUCT CARDS & GALLERY (DESKTOP GRID)
+   ========================================================================== */
+.featured h2,
+.gallery h2,
+.why-choose h2 {
+    color: #ffd6fa;
+    text-align: center;
+}
+
+.featured > p,
+.gallery > p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.product-preview,
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5625rem;
+}
+
+.product-preview article {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 1.5625rem;
+    border-radius: 1.25rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.product-preview article:hover {
+    transform: translateY(-0.5rem);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.product-preview img,
+.product-gallery img {
+    width: 100%;
+    height: 13.75rem;
+    object-fit: cover;
+    display: block;
+    border-radius: 0.9375rem;
+}
+
+.product-gallery img {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0.5rem 1.5625rem rgba(20, 0, 50, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.product-gallery img:hover {
+    transform: scale(1.03);
+}
+
+.product-preview h3 {
+    color: #f7c7ff;
+    margin: 1rem 0 0.5rem;
+}
+
+.product-preview a {
+    display: inline-block;
+    margin-top: 0.9375rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.product-preview a:hover,
+.product-preview a:focus {
+    color: #ff9ee7;
+}
+
+/* LISTS */
+.why-choose ul {
+    max-width: 37.5rem;
+    margin: 1.5625rem auto 0;
+    line-height: 2;
+    font-size: 1.1rem;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 1.5625rem;
+    background: rgba(35, 10, 65, 0.8);
+    margin-top: 1.875rem;
+}
+
+/* ==========================================================================
+   3. RESPONSIVE DESIGN & MEDIA QUERIES
+   ========================================================================== */
+
+/* TABLET BREAKPOINT (max-width: 900px) */
+@media (max-width: 900px) {
+    .product-preview,
+    .product-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h2 {
+        font-size: 2.25rem;
+    }
+}
+
+/* MOBILE BREAKPOINT (max-width: 600px) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.875rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        width: 100%;
+        max-width: 15.625rem;
+    }
+
+    .hero h2 {
+        font-size: 1.75rem;
+    }
+
+    .hero-video {
+        height: 13.75rem;
+    }
+
+    .product-preview,
+    .product-gallery {
+        grid-template-columns: 1fr; /* Multi-column to single-column layout switch */
+    }
+
+    .hero,
+    .featured,
+    .gallery,
+    .why-choose {
+        padding: 1.25rem;
+    }
+}
+
+/* FORM STYLES */
+form {
+    max-width: 43.75rem;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-top: 1.125rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #ffe3fa;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.875rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+input:focus,
+textarea:focus {
+    border-color: #f39be8;
+    box-shadow: 0 0 0.75rem rgba(239, 139, 231, 0.35);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 9.375rem;
+}
+
+/* CONTACT & ABOUT CARDS */
+.values,
+.contact-details,
+.extra-sections,
+.product-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5625rem;
+    margin-top: 1.875rem;
+}
+
+.extra-sections,
+.product-info {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.values article,
+.contact-card,
+.extra-card,
+.info-box,
+.description {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 1.5625rem;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.price {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #ffb6ef;
+    margin-bottom: 1.875rem;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0.3125rem;
+    padding: 0.625rem 1.125rem;
+    border-radius: 1.5625rem;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #ef8be7;
+    color: #34105e;
+    transform: translateY(-3px);
+}
+
+/* TABLET & MOBILE MEDIA QUERIES */
+@media (max-width: 900px) {
+    .values,
+    .contact-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .values,
+    .contact-details,
+    .extra-sections,
+    .product-info {
+        grid-template-columns: 1fr;
+    }
+}

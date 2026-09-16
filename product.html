@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoGlow Skincare | Product Details</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #a200ff, #007bff, #36023f, #ff00ff);
+            background-size: 400% 400%;
+            animation: neonShift 10s ease infinite;
+        }
+
+        @keyframes neonShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+
+        /* Header */
+        header {
+            background: rgba(35, 10, 65, 0.80);
+            padding: 20px;
+            text-align: center;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        header h1 {
+            margin: 0 0 18px;
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.45);
+        }
+
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+
+            padding: 10px 18px;
+            border-radius: 25px;
+
+            background: rgba(255, 255, 255, 0.12);
+
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #ef8be7;
+            color: #34105e;
+            transform: translateY(-2px);
+        }
+
+        /* Main content */
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        /* Page heading */
+        .hero {
+            text-align: center;
+            padding: 55px 25px;
+            margin-bottom: 35px;
+
+            background: rgba(255, 255, 255, 0.11);
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            border-radius: 28px;
+
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+
+            box-shadow: 0 10px 35px rgba(20, 0, 50, 0.35);
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ffe5fc;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+
+        /* Product card */
+        .product-card {
+            background: rgba(255, 255, 255, 0.10);
+
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 30px;
+
+            padding: 45px;
+
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+
+            box-shadow: 0 10px 35px rgba(20, 0, 50, 0.35);
+
+            text-align: center;
+        }
+
+        .product-card h2 {
+            color: #ffd4f8;
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+        }
+
+        /* Price */
+        .price {
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #ffb6ef;
+            margin-bottom: 30px;
+        }
+
+        /* Product information */
+        .product-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 25px;
+            border-radius: 20px;
+
+            transition: 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .info-box h3 {
+            color: #ffc9f8;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .info-box p {
+            line-height: 1.7;
+        }
+
+        /* Product description */
+        .description {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 20px;
+        }
+
+        .description h3 {
+            color: #ffd4f8;
+        }
+
+        .description p {
+            line-height: 1.8;
+        }
+
+        /* Add to Cart button */
+        .cart-button {
+            margin-top: 30px;
+
+            padding: 15px 35px;
+
+            border: none;
+            border-radius: 30px;
+
+            background: linear-gradient(45deg, #ff8edb, #c879ff);
+
+            color: #32104f;
+
+            font-size: 1.05rem;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow: 0 5px 20px rgba(255, 120, 230, 0.4);
+
+            transition: 0.3s ease;
+        }
+
+        .cart-button:hover {
+            transform: scale(1.06);
+
+            box-shadow:
+                0 8px 25px rgba(255, 150, 240, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+
+            background: rgba(35, 10, 65, 0.82);
+
+            margin-top: 20px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+
+            .product-info {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .product-card {
+                padding: 25px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header and Navigation -->
+    <header>
+
+        <h1>EcoGlow Skincare</h1>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Product Details</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Page Introduction -->
+        <section class="hero">
+
+            <h2>Product Details</h2>
+
+            <p>
+                Discover the natural ingredients and benefits
+                behind our EcoGlow skincare products.
+            </p>
+
+        </section>
+
+
+        <!-- Product -->
+        <article class="product-card">
+
+            <h2>EcoGlow Face Cream</h2>
+
+            <p class="price">R250</p>
+
+
+            <!-- Product Information -->
+            <div class="product-info">
+
+                <div class="info-box">
+
+                    <h3>Ingredients</h3>
+
+                    <p>
+                        Our EcoGlow Face Cream is inspired by natural
+                        African botanicals and carefully selected
+                        skincare ingredients.
+                    </p>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <h3>Benefits</h3>
+
+                    <p>
+                        Helps keep the skin feeling soft, moisturised,
+                        refreshed and naturally nourished.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Usage -->
+            <div class="description">
+
+                <h3>How to Use</h3>
+
+                <p>
+                    Apply a small amount of cream to clean skin and
+                    gently massage until absorbed. Use as part of
+                    your daily skincare routine.
+                </p>
+
+            </div>
+
+
+            <!-- Product Description -->
+            <div class="description">
+
+                <h3>About This Product</h3>
+
+                <p>
+                    EcoGlow Face Cream is designed for people who
+                    want a simple skincare routine inspired by
+                    natural African botanicals and sustainable
+                    beauty principles.
+                </p>
+
+            </div>
+
+
+            <!-- Add to Cart -->
+            <button type="button" class="cart-button">
+                Add to Cart
+            </button>
+
+        </article>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            &copy; 2026 EcoGlow Skincare. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
